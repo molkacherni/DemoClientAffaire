@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suitedemoclient">
+	<listeners>
+
+<listener class-name="DemoCreationClientaffaire. Testlistener"/>
+
+</listeners>
+  <test name="Testdemoclient">
+    <classes>
+      <class name="DemoCreationClientaffaire.TestDemoClientAffaire"/>
+    </classes>
+  </test> <!-- Testdemoclient -->
+</suite> <!-- Suitedemoclient -->
+
+

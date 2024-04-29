@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-04-29T10:53:08 WAT" name="Surefire suite" finished-at="2024-04-29T10:53:50 WAT" duration-ms="41799">
+    <groups>
+    </groups>
+    <test started-at="2024-04-29T10:53:08 WAT" name="Surefire test" finished-at="2024-04-29T10:53:50 WAT" duration-ms="41799">
+      <class name="DemoCreationClientaffaire.TestDemoClientAffaire">
+        <test-method is-config="true" signature="Configure()[pri:0, instance:DemoCreationClientaffaire.TestDemoClientAffaire@794cb805]" started-at="2024-04-29T10:53:08 WAT" name="Configure" finished-at="2024-04-29T10:53:13 WAT" duration-ms="4964" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Configure -->
+        <test-method signature="TestConnexion()[pri:1, instance:DemoCreationClientaffaire.TestDemoClientAffaire@794cb805]" started-at="2024-04-29T10:53:13 WAT" name="TestConnexion" finished-at="2024-04-29T10:53:24 WAT" duration-ms="11085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestConnexion -->
+        <test-method signature="TestNavigationMenu()[pri:2, instance:DemoCreationClientaffaire.TestDemoClientAffaire@794cb805]" started-at="2024-04-29T10:53:24 WAT" name="TestNavigationMenu" finished-at="2024-04-29T10:53:26 WAT" duration-ms="1269" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestNavigationMenu -->
+        <test-method signature="TestCreateClient()[pri:3, instance:DemoCreationClientaffaire.TestDemoClientAffaire@794cb805]" started-at="2024-04-29T10:53:26 WAT" name="TestCreateClient" finished-at="2024-04-29T10:53:29 WAT" duration-ms="3723" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCreateClient -->
+        <test-method signature="TestRechercheclient()[pri:4, instance:DemoCreationClientaffaire.TestDemoClientAffaire@794cb805]" started-at="2024-04-29T10:53:29 WAT" name="TestRechercheclient" finished-at="2024-04-29T10:53:30 WAT" duration-ms="596" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestRechercheclient -->
+        <test-method signature="TestCommercial()[pri:5, instance:DemoCreationClientaffaire.TestDemoClientAffaire@794cb805]" started-at="2024-04-29T10:53:30 WAT" name="TestCommercial" finished-at="2024-04-29T10:53:50 WAT" duration-ms="19928" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCommercial -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:DemoCreationClientaffaire.TestDemoClientAffaire@794cb805]" started-at="2024-04-29T10:53:50 WAT" name="tearDown" finished-at="2024-04-29T10:53:50 WAT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- DemoCreationClientaffaire.TestDemoClientAffaire -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
