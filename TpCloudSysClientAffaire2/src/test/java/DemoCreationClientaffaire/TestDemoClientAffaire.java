@@ -11,6 +11,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,6 +21,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 @Listeners(Testlistener.class)
@@ -54,8 +58,13 @@ public class TestDemoClientAffaire {
     public void Configure() {
         System.out.println("Test Création client ");
         System.out.println("random string is : " + randomVerification);
-        System.setProperty("webdriver.chrome.driver", "C:/Users/DEV01/eclipse-workspace/TpCloudSysClientAffaire/src/test/java/DemoCreationClientaffaire/chromedriver.exe");
+        
+       /* WebDriverManager.operadriver().setup();
+        driver = new OperaDriver();  */
+        
+       System.setProperty("webdriver.chrome.driver", "C:/Users/DEV01/eclipse-workspace/TpCloudSysClientAffaire/src/test/java/DemoCreationClientaffaire/chromedriver.exe");
         driver = new ChromeDriver();
+        
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
@@ -86,6 +95,11 @@ public class TestDemoClientAffaire {
     @Test(priority = 3)
     public void TestCreateClient() {
         System.out.println("Création client");
+        try {
+            Thread.sleep(2000); 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         WebElement creerButton = driver.findElement(By.id("B166764947412786522"));
         creerButton.click();
         Select selectList = new Select(driver.findElement(By.id("P37_TITRE_CLIENT")));
@@ -108,7 +122,11 @@ public class TestDemoClientAffaire {
         driver.findElement(By.id("R166763848610786519_search_field")).sendKeys(randomVerification);
         driver.findElement(By.id("R166763848610786519_search_button")).click(); 
       
-        
+        try {
+            Thread.sleep(3000); 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         
     }
         
@@ -158,14 +176,48 @@ public class TestDemoClientAffaire {
 
        
         driver.findElement(By.id("B159999124609656781")).click();
-        
-        driver.findElement(By.id("B160287410900647371")).click();
        
-        driver.findElement(By.id("B159999519746656781")).click();
-   
+    }
+        
+    
+    @Test(priority = 6)
+    public void TestDevis() {
+        
+        System.out.println(" Création un Devis");
+        Select Famille = new Select(driver.findElement(By.id("P128_FAMILLE")));
+        Famille.selectByVisibleText("Divers");
+        
+        Select SousFamille = new Select(driver.findElement(By.id("P128_SOUS_FAMILLE")));
+        SousFamille.selectByVisibleText("Financier"); 
+        
+        WebElement iconElement = driver.findElement(By.xpath("//*[@id='report_R150694031949739349']/div/div[1]/table/tbody/tr[1]/td[4]"));
+         
+        iconElement.click(); 
+        
+        WebElement iconElement2 = driver.findElement(By.xpath(" //*[@id=\"report_R150694031949739349\"]/div/div[1]/table/tbody/tr[2]/td[4]"));
+        
+        iconElement2.click(); 
+        
+        WebElement iconElement3 = driver.findElement(By.xpath(" //*[@id=\"report_R150694031949739349\"]/div/div[1]/table/tbody/tr[3]/td[4]"));
+        
+        iconElement3.click();  
+        driver.findElement(By.id("validerSubmit")).click();
+        
+       /* driver.findElement(By.id("f05_0001")).sendKeys("4");
+        driver.findElement(By.id("f05_0002")).sendKeys("1");
+        driver.findElement(By.id("validerDetailsBtn")).click();*/
+    
+        System.out.println(" Devis créé ! ");
+        
+        try {
+            Thread.sleep(4000); 
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+  
         System.out.println(" Recherche affaire ");
        
-       
+        driver.findElement(By.id("B159999519746656781")).click();
         driver.findElement(By.id("R160282018192621996_search_field")).sendKeys(randomVerification);
         driver.findElement(By.id("R160282018192621996_search_button")).click(); 
         int maxRetries = 3;
@@ -191,9 +243,25 @@ public class TestDemoClientAffaire {
         }
 
         Assert.assertTrue(isElementDisplayed, "Le nom d'affaire recherché n'est pas présent dans le tableau.");
-    }
-    
+        
+      
+  
+        
+        // WebElement iconElement4 = driver.findElement(By.xpath("//*[@id=\"160282131289621998\"]/tbody/tr[2]/td[1]"));
+        
+        //iconElement4.click(); 
+       
+         
+       //WebElement iconElement5 = driver.findElement(By.xpath("//*[@id=\"tab_container_static_id_RDS\"]/li[2]"));
+       // iconElement5.click();
 
+      
+
+
+    }
+
+    
+    
     @AfterTest
     public void tearDown() {
         System.out.println("Test final !");
